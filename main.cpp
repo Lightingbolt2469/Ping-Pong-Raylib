@@ -6,21 +6,21 @@ using namespace std;
 void Movement_Ball(int &x, int &y, int &speed_x, int &speed_y, int width, int height, 
                    int &p_x, int &p_y, int p_w, int p_h, 
                    int &p_2x, int &p_2y, int p_2w, int p_2h,
-                   int screen_w, int screen_h, Sound effect, int &score1, int &score2) {
+                   int screen_w, int screen_h, Sound effect, int &score1, int &score2, Sound score_sound) {
     x += speed_x;
     y += speed_y;
 
     if (x <= 0) {
         score2 += 1;
         speed_x *= -1;
-        PlaySound(effect);
+        PlaySound(score_sound);
         x = screen_w / 2 - width / 2;
         y = screen_h / 2 - height / 2;
     } 
     else if (x + width >= screen_w) {
         score1 += 1;
         speed_x *= -1;
-        PlaySound(effect);
+        PlaySound(score_sound);
         x = screen_w / 2 - width / 2;
         y = screen_h / 2 - height / 2;
     }
@@ -63,7 +63,8 @@ int main() {
     int ball_height = 22;
     int ball_speed_x = 7;
     int ball_speed_y = 7;
-    Sound ball_hit = LoadSound("ball_bounce.wav");
+    Sound ball_hit = LoadSound("Sounds/ball_bounce.wav");
+    Sound score_sound = LoadSound("Sounds/score_sound.wav");
     
     int paddle_x = 10;
     int paddle_y = GetScreenHeight() / 2 - 70;
@@ -106,7 +107,7 @@ int main() {
         Movement_Ball(ball_x, ball_y, ball_speed_x, ball_speed_y, ball_width, ball_height, 
                       paddle_x, paddle_y, paddle_width, paddle_height, 
                       paddle_x_2, paddle_y_2, paddle_width_2, paddle_height_2, 
-                      GetScreenWidth(), GetScreenHeight(), ball_hit, score1, score2);
+                      GetScreenWidth(), GetScreenHeight(), ball_hit, score1, score2, score_sound);
         InCornerPaddle(paddle_y, paddle_height ,GetScreenHeight());
         InCornerPaddle(paddle_y_2, paddle_height_2, GetScreenHeight());
         EndDrawing();

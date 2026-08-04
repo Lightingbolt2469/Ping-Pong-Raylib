@@ -72,8 +72,8 @@ int main() {
     int ball_height = 22;
     int ball_speed_x = 7;
     int ball_speed_y = 7;
-    Sound ball_hit = LoadSound("ball_bounce.wav");
-    Sound score_sound = LoadSound("score_sound.wav");
+    Sound ball_hit = LoadSound("Sounds/ball_bounce.wav");
+    Sound score_sound = LoadSound("Sounds/score_sound.wav");
     
     int paddle_x = 10;
     int paddle_y = GetScreenHeight() / 2 - 70;
