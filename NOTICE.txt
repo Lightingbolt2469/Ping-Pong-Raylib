@@ -1,0 +1,7 @@
+Ping Pong Raylib
+Copyright 2026 Vihaan Gnanendran Sasirekha
+
+This product includes software developed by Vihaan Gnanendran Sasirekha. 
+
+Trademark Notice:
+Ping Pong Raylib is a trademark of Vihaan Gnanendran Sasirekha. Any redistribution of this software or derivative works must retain this notice and clearly attribute Ping Pong Raylib as a trademark of Vihaan Gnanendran Sasirekha in accordance with Section 4(d) and Section 6 of the Apache License 2.0.
